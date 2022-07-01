@@ -50,7 +50,7 @@ async function scrapeUsernames(): Promise<string | undefined> {
   return new Promise((resolve) => {
     config.username_selectors.forEach((selector) => {
       const usernameNode = document.querySelector(selector)
-      if (usernameNode && usernameNode.nodeName === 'input') {
+      if (usernameNode && usernameNode.nodeName === 'INPUT') {
         const usernameFormNode = <HTMLInputElement>usernameNode
         if (usernameFormNode.value && usernameFormNode.type !== 'password') {
           void saveUsername(usernameFormNode.value)
